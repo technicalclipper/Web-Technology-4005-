@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Setup PC - Interactive Features</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .dynamic-time {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .hover-image {
+            display: block;
+            margin: 20px auto;
+            width: 300px;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        .hover-text {
+            text-align: center;
+            font-size: 1.2rem;
+            visibility: hidden;
+        }
+        .interactive-box {
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            text-align: center;
+            border: 2px solid #555;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .change-text:hover {
+            color: #ff4500;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">Gaming Setup PC - Interactive Website</h1>
+
+   
+    <div class="dynamic-time" id="timeDisplay"></div>
+
+ 
+    <div>
+        <img src="gaming-setup.jpg" alt="Gaming Setup" class="hover-image" id="hoverImage">
+        <p class="hover-text" id="hoverText">Experience the ultimate gaming setup!</p>
+    </div>
+
+
+    <div class="interactive-box" id="colorBox">
+        Click me to change the background color!
+    </div>
+
+    
+    <p class="change-text" id="hoverChange">Hover over me to change my style!</p>
+
+    <script>
+   
+        function updateTime() {
+            const now = new Date();
+            const timeDisplay = document.getElementById('timeDisplay');
+            timeDisplay.textContent = `Current Time: ${now.toLocaleTimeString()}`;
+        }
+        setInterval(updateTime, 1000);
+        updateTime(); 
+
+        const hoverImage = document.getElementById('hoverImage');
+        const hoverText = document.getElementById('hoverText');
+        hoverImage.addEventListener('mouseover', () => {
+            hoverText.style.visibility = 'visible';
+        });
+        hoverImage.addEventListener('mouseout', () => {
+            hoverText.style.visibility = 'hidden';
+        });
+
+    
+        const colorBox = document.getElementById('colorBox');
+        colorBox.addEventListener('click', () => {
+            const colors = ['#ff4500', '#1e90ff', '#32cd32', '#ffd700', '#8a2be2'];
+            document.body.style.backgroundColor =
+                colors[Math.floor(Math.random() * colors.length)];
+        });
+
+ 
+        const hoverChange = document.getElementById('hoverChange');
+        hoverChange.addEventListener('mouseover', () => {
+            hoverChange.textContent = 'You hovered over me!';
+        });
+        hoverChange.addEventListener('mouseout', () => {
+            hoverChange.textContent = 'Hover over me to change my style!';
+        });
+    </script>
+</body>
+</html>
