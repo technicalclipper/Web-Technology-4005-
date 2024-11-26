@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gamingSetup>
+    <item>
+        <name>Gaming Laptop</name>
+        <price>1500</price>
+        <brand>Asus ROG</brand>
+    </item>
+    <item>
+        <name>Mechanical Keyboard</name>
+        <price>100</price>
+        <brand>Logitech</brand>
+    </item>
+    <item>
+        <name>Gaming Mouse</name>
+        <price>50</price>
+        <brand>Razer</brand>
+    </item>
+</gamingSetup>
